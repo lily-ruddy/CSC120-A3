@@ -33,12 +33,43 @@ public class Conversation {
 
     System.out.println("Hi friend! What's on your mind?");
     
-    // for loop of the main conversation
+    // For loop of the main conversation
     for (int i = 0; i < rounds; i++){
-      String userInput = input2.nextLine(); // stores the user input
+      String userInput = input2.nextLine(); // stores the user input  
+      
+      /* Detects mirror words in user input*/
+      String[] eachUser = userInput.split(" ");
+      for(int j =0; j < eachUser.length; j++){  // for each word in the user's input
+
+        for(int k = 0; k< user_words.length; k++){ // for each word in user_words compare
+          
+          if (eachUser[j].equalsIgnoreCase(user_words[k])) {
+            System.out.println(eachUser[j] + " matches " +user_words[k]);
+            
+          } else{
+            System.out.println(eachUser[j] + " doesn't match " +user_words[k]);
+          }
+          
+          
+
+
+        }
+      
+        //eachUser[j].equalsIgnoreCase()
+        
+        //System.out.println(eachUser[j]);
+      }
+      
+
+
+
+
+
+
+
       // random integer
       int rand_int1 = rand.nextInt(responses.length); // randomly chooses a number from 0 to the number of responses in responses
-      System.out.println(responses[rand_int1]);
+      System.out.println(responses[rand_int1]); // replies with canned responses
       
       
       
@@ -80,14 +111,8 @@ public class Conversation {
 
 
 
-// Idea Dump
-  // int size = p_questions_list.length;
-  // p_questions[rand.nextInt(p_questions.length)];
-
+// Idea Dump:
   // random integer
-    // int rand_int1 = rand.nextInt(rounds);
-    //System.out.println(rand.nextInt(rounds));
-
 
   // Possible Questions:
     /* Creating an array with potential questions */
