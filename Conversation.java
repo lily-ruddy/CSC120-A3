@@ -24,7 +24,7 @@ public class Conversation {
   // User imput and their mirror words:
   String[] user_words = {"I", "me", "am", "you", "my", "your"};
   String[] mirror = {"you", "me", "are", "I", "your", "my"};
-  String[] responses = {"Mmmmmm", "Wow", "Love that!", "Great!", "Tell me more"};
+  String[] responses = {"Mmmmmm.", "Wow!", "Love that!", "Great!", "Please, tell me more.", "Interesting."};
 
   // Main loop:
   public void play(){
@@ -36,7 +36,13 @@ public class Conversation {
     // for loop of the main conversation
     for (int i = 0; i < rounds; i++){
       String userInput = input2.nextLine(); // stores the user input
-      System.out.println("Lovely");
+      // random integer
+      int rand_int1 = rand.nextInt(responses.length); // randomly chooses a number from 0 to the number of responses in responses
+      System.out.println(responses[rand_int1]);
+      
+      
+      
+  
       
 
 
