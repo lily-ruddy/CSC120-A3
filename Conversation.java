@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import java.util.Random;
-//import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -31,7 +30,6 @@ public class Conversation {
 
   /**
    * Play function that starts the main conversation with the chatbox.
-   * @return Returns print statements detailing the conversation. 
    */
   // Main Loop:
   public void play(){
@@ -86,7 +84,9 @@ public class Conversation {
 
   }
 
-
+  /**
+   * Creates a new Conversation class and playing through the conversation
+   */
   public static void main(String[] arguments) {
     // You will start the conversation here.
     Conversation myConversation = new Conversation();
