@@ -9,7 +9,7 @@ import java.util.ArrayList;
 //https://stackoverflow.com/questions/858572/how-to-make-a-new-list-in-java
 
 /**
- * Begins a conversation with a chatbox. 
+ * Defines the class Conversation
  * 
  */
 public class Conversation {
@@ -40,6 +40,7 @@ public class Conversation {
     // For Loop of the Main Conversation
     for (int i = 0; i < rounds; i++){
       String userInput = input2.nextLine(); // stores the user input  
+
       /* Storing the indexes of the user and mirror words */
       List<Integer> userMatch = new ArrayList<>(); // stores indexes for user
       List<Integer> mirrorMatch = new ArrayList<>(); // stores indexes for mirror
@@ -47,6 +48,7 @@ public class Conversation {
       /* Detects mirror words in user input*/
       String[] eachUser = userInput.split(" "); // splits user input by their spaces
       for(int j =0; j < eachUser.length; j++){  // for each word in the user's input
+        
 
  
         /*for loop of checking each of the words in the user's response and checking if they match the mirror words */
@@ -54,17 +56,19 @@ public class Conversation {
           
           
           if (eachUser[j].equalsIgnoreCase(userWords[k])) {
-            //System.out.println(eachUser[j] + " matches " +user_words[k]);
+            System.out.println(eachUser[j] + " matches " +userWords[k]);
             userMatch.add(j); // adds the index
             mirrorMatch.add(k); // adds the index
             
             
           } else{
-
+            /* There are no mirror words in the user's response. */
+            break;
             
           }
           
-          
+          /* There are mirror words. */
+          break;
 
         }
         
@@ -81,6 +85,10 @@ public class Conversation {
     // Outside of For loop
     /* Thanking the user for talking with them */
     System.out.println("Thank you for talking with me. I enjoyed our conversation. Please come again to chat!");
+
+    // Closes Scanners
+    input.close();
+    input2.close();
 
   }
 
