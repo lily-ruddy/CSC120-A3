@@ -9,8 +9,8 @@ import java.util.ArrayList;
 //https://stackoverflow.com/questions/858572/how-to-make-a-new-list-in-java
 
 /**
- * Defines the class Conversation
- * 
+ * Chooses the amount of rounds to converse with a chatbox. Can respond with basic prompts.
+ * @param args The command line arguments (ignored)
  */
 public class Conversation {
 
@@ -18,10 +18,8 @@ public class Conversation {
   /* Takes the response from user */
   Scanner input = new Scanner(System.in); // scanner for round number
   Scanner input2 = new Scanner(System.in); // scanner for user input
-  /* Random numbers */
-  Random rand = new Random();
-  /* List of arrays to store transcript */
-  ArrayList<String> transcript = new ArrayList<>();
+  Random rand = new Random(); // random numbers
+  ArrayList<String> transcript = new ArrayList<>(); // list of arrays to store transcript
   
   // User Input & Mirror Words:
   String[] userWords = {"I", "me", "am", "you", "my", "your"};
@@ -49,12 +47,9 @@ public class Conversation {
       String[] eachUser = userInput.split(" "); // splits user input by their spaces
       for(int j =0; j < eachUser.length; j++){  // for each word in the user's input
         
-
- 
         /*for loop of checking each of the words in the user's response and checking if they match the mirror words */
         for(int k = 0; k< userWords.length; k++){ // for each word in user_words compare
-          
-          
+          ;
           if (eachUser[j].equalsIgnoreCase(userWords[k])) {
             System.out.println(eachUser[j] + " matches " +userWords[k]);
             userMatch.add(j); // adds the index
@@ -72,9 +67,6 @@ public class Conversation {
 
         }
         
-      
-
-
       }
       
       // Randomizes Canned Responses
